@@ -8,8 +8,8 @@ def home(request):
     return render(request, 'home.html')
 
 def list(request):
-    items = MyModel.objects.all()
-    return  render(request, 'list.html', {"list" : items})
+    lists = MyModel.objects.all()
+    return  render(request, 'list.html', {"lists" : lists})
 
 
 def login_view(request):

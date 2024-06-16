@@ -3,12 +3,16 @@
 {% block title %}List{% endblock %}
 
 {% block content %}
-<h1>List</h1>
-<ul>
-    {%  for list in lists %}
-    <li>
-        {{ list.title }}: {% if list.completed %}Completed{% else %} Not completed{% endif %}
-    </li>
-    {% endfor %}
-</ul>
+    <h1>List</h1>
+    {% if lists %}
+        <ul>
+            {% for list in lists %}
+                <li>
+                    {{ list.title }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No items found.</p>
+    {% endif %}
 {% endblock %}
